@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "UploadFile";
+}
+
+<h2>UploadFile</h2>
+
+@using (Html.BeginForm("UploadFile", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div>
+        @Html.TextBox("file", "", new { type = "file" }) <br />
+
+        <input type="submit" value="Convert To Doc" />
+
+        @ViewBag.Message
+
+    </div>
+
+
+}
+
+
+@using (Html.BeginForm("FromURLFile", "Upload", FormMethod.Post))
+{
+
+<div>
+    <br />
+    <br />
+    <hr>
+    <h2>Enter Your PDF URL</h2>
+    <br />
+
+    @Html.TextBox("txtNumber1","", new { style="width:800px" })<br />
+    <br />
+
+    <input type="submit" value="Convert To Doc from url"/>
+
+    @ViewBag.Message
+
+</div>
+
+
+} 
